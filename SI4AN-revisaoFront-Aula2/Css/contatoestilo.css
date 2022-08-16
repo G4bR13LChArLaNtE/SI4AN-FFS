@@ -42,7 +42,9 @@ input:hover, textarea:hover, input:focus, textarea:focus {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border: 1px solid;
-    color: black; }
+    color: black;
+    margin-bottom: 8px;
+}
 
 textarea { width: 400px;
         height: 120px;
