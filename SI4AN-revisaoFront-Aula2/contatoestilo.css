@@ -1,7 +1,18 @@
-body { padding: 0; margin: 0; }
-form { font-family: Verdana,Tahoma,sans-serif;
-    font-size: 15px; background-color: #CC3300;
-    max-width: 500px; }
+body {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    justify-items: center;
+}
+
+
+form {
+     font-family: Verdana,Tahoma,sans-serif;
+    font-size: 15px;
+    background-color: #CC3300;
+    max-width: 500px;
+    margin-top: 8%;
+}
 
 h1 { margin-bottom: 20px;
     margin-left: 20px; color: #66FFFF;
