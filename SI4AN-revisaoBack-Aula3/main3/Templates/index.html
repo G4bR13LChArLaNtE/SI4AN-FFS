@@ -4,27 +4,43 @@
         <title>Aula 3 - Revisão Backend</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
+        <link href="static/css/style.css" rel="stylesheet">
     </head>
     <body>
-        Aprovado ou Reprovado
-
+        <h2>Aprovado ou Reprovado</h2>
+        <br><br>
         <div>
-            <form method="get">
-                Primeira Nota:
+
+            <h3>Digite suas quatro maiores notas das suas ACs:</h3>
+            <br><br>
+            <form method="post">
+                <h4>Primeira Nota:</h4>
                 <input type="text" name="primeira">
-                <br>
-                Segunda Nota:
+                <br><br>
+                <h4>Segunda Nota:</h4>
                 <input type="text" name="segunda">
-                <br>
-                <input type="submit" value="Enviar">
+                <br><br>
+                <h4>Terceira Nota:</h4>
+                <input type="text" name="terceira">
+                <br><br>
+                <h4>Quarta Nota:</h4>
+                <input type="text" name="quarta">
+                <br><br>
+                <input type="submit" value="Enviar" id='btn-enviar'>
             </form>
         </div>
-
+        <br><br>
         {% if resultado %}
         <div>
-            {{resultado}} com média {{media}}!!!
+            <h1>{{ resultado }} com média {{ media }}!!!</h1>
         </div>
+
+        {% else %}
+        <br><br>
+        <div>
+            <h1>Por favor, digite os valores!</h1>
+        </div>
+        
         {% endif %}
 
     </body>

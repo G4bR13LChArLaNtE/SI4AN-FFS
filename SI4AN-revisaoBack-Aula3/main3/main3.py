@@ -2,19 +2,25 @@ from flask import Flask, request, render_template # Importa a biblioteca
 
 app = Flask(__name__) # Inicializa a aplicação
 
-@app.route('/') # Nova rota
+@app.route('/', methods=['POST', 'GET'])# Nova rota
+@app.route('/index.html', methods=['POST', 'GET'])
 def main():
     resultado = None
     media = None
 
-    primeira = request.args.get('primeira')
-    segunda = request.args.get('segunda')
+    if request.method == 'POST':
+        primeira = request.form.get('primeira')
+        segunda = request.form.get('segunda')
+        terceira = request.form.get('terceira')
+        quarta = request.form.get('quarta')
 
-    if primeira and segunda:
-        primeira = float(primeira)
-        segunda = float(segunda)
+        if primeira and segunda and terceira and quarta:
+            primeira = float(primeira)
+            segunda = float(segunda)
+            terceira = float(terceira)
+            quarta = float(quarta)
 
-        media = (primeira + segunda) / 2
+        media = (primeira + segunda + terceira + quarta) / 4
         if media >= 7:
             resultado = 'Aprovado'
         elif media >= 4:
@@ -22,8 +28,7 @@ def main():
         else:
             resultado = 'Reprovado'
 
-    return render_template('index.html', media=media,
-                                         resultado=resultado)
+    return render_template('index.html', media=media, resultado=resultado)
 
 if __name__ == '__main__':
   app.run(debug=True) # Executa a aplicação

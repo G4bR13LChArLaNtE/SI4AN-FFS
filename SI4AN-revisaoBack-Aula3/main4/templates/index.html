@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Aula 3 - Revisão Backend</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static\css\bootstrap.min.css">
+        <link href="static/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <h2>Lista de alunos:</h2>
+        
+        <table class="table table-dark table-striped-columns">
+            <thead>
+              <tr>
+                <th scope="col" class="text-center text-danger bg-dark">Nome</th>
+                <th scope="col" class="text-center text-primary bg-dark">Idade</th>
+                <th scope="col" class="text-center text-success bg-dark ">Profissão</th>
+                <th scope="col" class="text-center text-warning bg-dark">RA</th>
+              </tr>
+            </thead>
+
+            <h3 id="c" class="text-dark">Tabela de dados dos alunos</h3>
+
+            {% for i in lista %}
+
+                
+                <tbody>
+                  <tr>
+                    <td class="text-center align-middle">{{i["nome"]}}</td>
+                    <td class="text-center align-middle">{{i["idade"]}}</td>
+                    <td class="text-center align-middle">{{i["Profissão"]}}</td>
+                    <td class="text-center align-middle">{{i["RA"]}}</td>
+                  </tr>
+                </tbody>
+              
+
+
+            {% endfor %}
+
+        </table>
+
+        
+        
+
+    </body>
+</html>
