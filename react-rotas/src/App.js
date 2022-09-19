@@ -1,10 +1,13 @@
 import React from 'react';
 import {Switch, Route, Link} from 'react-router-dom';
 
+
+
 import './App.css';
-import Home from './Home';
-import Sobre from './Sobre';
-import Usuario from './Usuario';
+import Home from './Home/index';
+import Sobre from './Sobre/index.js';
+import Contato from './Contato/index';
+import foto from './gabriel-foto.png';
 
 
 
@@ -12,17 +15,22 @@ function App() {
   return (
     <div className="page">
     <header>
-    <p><Link to='/home'>Home</Link></p>
-    <p><Link to='/usuario'>Usuario</Link></p>
+
+    <img className="logo" src={foto} alt="Charlante"></img>
+    
+    <p><Link to='/home'>Início</Link></p>
     <p><Link to='/sobre'>Sobre</Link></p>
+    <p><Link to='/Contato'>Contato</Link></p>
+
     </header>
     <main>
         <Switch>
-          <Route path='/usuario' component= {Usuario}/>
+          <Route path='/contato' component= {Contato}/>
           <Route path='/sobre' component= {Sobre}/>
-          <Route path='/home' component= {Home}/>
+          <Route path='/' component= {Home}/>
         </Switch>
-      </main></div>
+      </main>
+      </div>
   );
 }
 
