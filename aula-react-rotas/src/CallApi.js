@@ -2,20 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 function CallApi() {
 
+    // eslint-disable-next-line no-unused-vars
     const [numberOfUsers, setNumberOfUsers] = useState(0)
-    const [users, setUsers] = useState();
+    const [users, setUsers] = useState()
 
-
-
-
-
-
-
-
-
-
-
-
+        // eslint-disable-next-line no-unused-vars
         function getAllUsers(){
         var request = new Request('http://localhost:5001/v1/aula/consultar', {mode: 'no-cors'});
 
@@ -32,9 +23,8 @@ function CallApi() {
 
     }
 
-
-
     const getApiLocal = async () => {
+        // eslint-disable-next-line no-unused-vars
         const res = await fetch("http://localhost:5001/v1/aula/consultar/", {
           method: 'GET',
           mode: 'no-cors',
@@ -44,13 +34,12 @@ function CallApi() {
           },
           })
           .then(res => {
-            console.log(res) 
+            console.log(res)
             return res.json()
          })
           
         };
 
-   
 
   const getApiData = async () => {
     const response = await fetch(
@@ -66,6 +55,7 @@ function CallApi() {
 };
 
   const cadastrarUser = async () => {
+    // eslint-disable-next-line no-unused-vars
     const res = await fetch("http://127.0.0.1:5000/v1/aula/cadastrar", {
       method: 'POST',
       body: JSON.stringify(data),
@@ -107,13 +97,9 @@ function CallApi() {
           </div>
         ))}
     </div>
-
-   
-
-
         </div>
-        
     );
 }
+
 
 export default CallApi;
