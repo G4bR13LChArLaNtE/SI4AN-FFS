@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link, useHistory, useLocation, useParams } from 'react-router-dom';
+import { Link, useNavigate, useLocation, useParams } from 'react-router-dom';
 
 export default function Sobre (){
     const location = useLocation();
     // eslint-disable-next-line no-unused-vars
-    const history = useHistory();
+    const navigate = useNavigate();
     const { id } = useParams();
     return (
         <div>

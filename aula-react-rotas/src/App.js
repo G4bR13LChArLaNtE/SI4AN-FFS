@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch, Route, Link} from 'react-router-dom';
+import {Routes, Route, Link} from 'react-router-dom';
 import Home from './Home';
 import Sobre from './Sobre';
 import Usuario from './Usuario';
@@ -14,11 +14,11 @@ export default function App() {
      <p><Link to='/usuario'>Usuario</Link></p>
      </header>
      <main>
-         <Switch>
+         <Routes>
            <Route path='/usuario' component= {Usuario}/>
            <Route path='/sobre/:id?' component= {Sobre}/>
            <Route path='/home' component= {Home}/>
-         </Switch>
+         </Routes>
        </main>
        </div>
    );
