@@ -13,8 +13,6 @@ def lista_alunos():
     return alunos
 
 
-print(lista_alunos())
-
 app = Flask(__name__)
 
 

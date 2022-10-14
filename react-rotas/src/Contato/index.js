@@ -1,8 +1,9 @@
-import React, { useState, createContext } from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 
 
 import './Contato.css';
+import '../Dados/index';
 
 
 
@@ -24,18 +25,10 @@ export default function Contato() {
 
         console.log("Os Dados são", data);
 
-        const Context = createContext(handleSubmit);
-
-        console.log(Context);
-
-        return data;
 
     }
 
 
-    
-
-    
 
 
    return (
@@ -48,39 +41,43 @@ export default function Contato() {
             <label>
                 <h5>Nome:</h5>
                 <input
+                id = "nome"
                 onChange={handleChange}
                 type="text"
                 name="nome"
                 placeholder="Seu nome, por favor!"
                 size="53"
                 value={formValues.nome}
-                nome={formValues.nome}/>
+                />
             </label>
             <label>
                 <h5>E-mail:</h5>
                 <input
+                id = "email"
                 onChange={handleChange}
                 type="email"
                 name="email"
                 placeholder="Digite seu e-mail" 
                 size="53"
                 value={formValues.email}
-                email={formValues.email}/>
+                />
             </label>
             <label>
                 <h5>Assunto:</h5>
-                <input 
+                <input
+                id="assunto"
                 onChange={handleChange}
                 type="text"
                 name="assunto"
                 placeholder="Sobre o quê vamos conversar?" 
                 size="53"
                 value={formValues.assunto}
-                assunto={formValues.assunto}/>
+                />
             </label>
             <label>
             <h5>Mensagem:</h5>
                 <textarea
+                id="mensagem"
                 onChange={handleChange}
                 name="mensagem"
                 value={formValues.mensagen}
@@ -92,6 +89,7 @@ export default function Contato() {
             </label><br /><br />
 
             <select
+            id="sexo"
             name="sexo"
             value={formValues.sex}
             onChange={handleChange}>
@@ -104,20 +102,13 @@ export default function Contato() {
 
 
 
-                        <div className="container">
-
-                <p>Nome:{formValues.nome}</p>
-                <p>E-mail:{formValues.email}</p>
-                <p>Assunto:{formValues.assunto}</p>
-                <p>Mensagem:{formValues.mensagem}</p>
-
-                </div><br /><br /><br /><br />
+        <Link to="/dados">Ver informações</Link>
+<br /><br /><br /><br /><br /><br />
 
 
 <Link to="/Home">retornar a página inicial</Link><br /><br /><br /><br /><br /><br />
        </div>
 
-       
    );
 }
 
