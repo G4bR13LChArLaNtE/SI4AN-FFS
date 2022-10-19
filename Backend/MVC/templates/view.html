@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8">
+        <title>Lista</title>
+        <meta name="description" content="Meu currículo pessoal.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static\bootstrap.min.css">
+        <link rel="stylesheet" href="../static/view.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sarala&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+
+       <main class="content">
+
+        <div class="row">
+
+          <h2 id="d" class="col"> Aqui estão seus itens: </h2><br>
+
+
+  {% if dic != '' %}
+
+  <table class="table table-dark table-striped-columns">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center text-danger bg-dark">Id</th>
+          <th scope="col" class="text-center text-primary bg-dark">Item</th>
+          <th scope="col" class="text-center text-success bg-dark ">Quantidade</th>
+          <th scope="col" class="text-center text-warning bg-dark">Unidade</th>
+        </tr>
+      </thead><br><br>
+
+
+      <h3 id="c" class="text-dark">Tabela de Itens</h3>
+
+          {% for i in dic %}
+
+              
+              <tbody>
+                <tr>
+                  <td class="text-center align-middle">{{i["id"]}}</td>
+                  <td class="text-center align-middle">{{i["item"]}}</td>
+                  <td class="text-center align-middle">{{i["quantidade"]}}</td>
+                  <td class="text-center align-middle">{{i["unidade"]}}</td>
+                </tr>
+              </tbody>
+            
+
+
+          {% endfor %}
+
+  {% endif %}
+
+      </table><br><br>
+    </div><br><br>
+
+
+
+        <section class="form-itens">
+
+
+                <form action="/lista/adicionar" method="POST">
+
+
+                    <div class="form-group">
+
+                        <label for="id"><b>id: </b></label><br>
+                        
+                        <input type="text" class="form-control1" id="id" name="id" aria-describedby="nameHelp" placeholder="Digite o id do item!"> <br><br />
+      
+                      </div>
+
+                    <div class="form-group1">
+
+                      <label for="item"><b>Item: </b></label><br>
+                      
+                      <input type="text" class="form-control1" id="item" name="item" aria-describedby="emailHelp" placeholder="Digite o Item!"><br><br />
+
+                    </div>
+
+
+                    <div class="form-group2">
+
+                      <label for="quantidade"><b>Quantidade: </b></label><br>
+                      
+                      <input type="text" class="form-control1" id="quantidade" name="quantidade" aria-describedby="nameHelp" placeholder="Quantos itens serão?"> <br><br />
+
+                    </div>
+
+                    <div class="form-group3">
+
+                        <label for="unidade"><b>Unidade: </b></label><br>
+                        
+                        <input type="text" class="form-control1" id="unidade" name="unidade" aria-describedby="nameHelp" placeholder="Qual a unidade do item?"> <br><br />
+  
+                      </div>
+                    
+                    <input id="btn-enviar" type="submit" value="Adicionar" style="margin-top: 10px; font-weight: bold;">
+
+                    <input id="btn-atualizar" type="submit" value="Alterar" formaction="/lista/atualizar" style="margin-top: 10px; font-weight: bold;">
+
+                    <input id="btn-excluir" type="submit" value="Excluir" formaction="/lista/delete1" style="margin-top: 10px; font-weight: bold;">
+
+
+                  </form><br><br>
+
+              </div><br><br>
+
+
+        </section>
+
+       </main><!--content-->
+
+  </div><!--parent-->
+          
+
+          <script src="static/scripts.js" defer></script>
+    </body>
+</html>

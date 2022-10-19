@@ -1,0 +1,84 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    background: white;
+    font-size: 18px;
+    margin-bottom: 30%;
+}
+
+.row{
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    max-width: 130%;
+    width: 101%;
+    height: 300%;
+    margin-bottom: 30px;
+    padding-bottom: 60px;
+    background:rgb(28, 84, 129);
+    color: white;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "h1 h3 b";
+}
+
+.g-col-4{
+    grid-area: h1;
+}
+
+
+#btn-excluir{
+    transform:translate(3%,0);
+    margin-top: 2%;
+    margin-bottom: 4%;
+    height: 60%;
+    font-weight: bold;
+}
+
+#btn-atualizar{
+    transform:translate(3%,0);
+    margin-top: 2%;
+    margin-bottom: 4%;
+    margin-right: 2%;
+    height: 60%;
+    font-weight: bold;
+}
+
+#btn-enviar{
+    transform:translate(3%,0);
+    margin-top: 2%;
+    margin-bottom: 4%;
+    margin-right: 2%;
+    height: 60%;
+    font-weight: bold;
+}
+
+.table{
+    transform: translate(15%, 20%);
+    margin-bottom: 6%
+}
+
+#d{
+    transform: translate(15%, 20%);
+    margin-bottom: 6%
+}
+
+#c{
+    transform:translate(-400%,100%);
+    margin-bottom: 2%
+}
+
+
+form {
+    background: black;
+    color: rgb(244, 192, 6);
+    display:block;
+    height: 30%;
+    width: 25%;
+    border: 2px solid rgb(18, 77, 240);
+    transform: translate(125%, 15%);
+    padding-bottom: 3%;
+    padding-left: 2%;
+    padding-top: 3%;
+    padding-right: 2%;
+    margin-bottom: 3%;
+}
