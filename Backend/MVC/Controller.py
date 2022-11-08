@@ -18,7 +18,7 @@ def home():
     lista = Model.jsonReturn()
     return render_template('view.html', dic=lista)
 
-@app.route('/lista', methods=['GET'])
+@app.route('/lista/itens', methods=['GET'])
 def get():
     if request.method == 'GET':
         return jsonify(Model.jsonReturn())
