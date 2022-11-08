@@ -1,9 +1,17 @@
 from flask import Flask, request, jsonify, render_template, redirect
 from Model import Model
 
+from dotenv import load_dotenv
+
+import os
+
+# Carrega as variáveis de ambiente do arquivo .env
+load_dotenv()
+
+
 app = Flask(__name__)
 
-
+app.secret_key = os.environ.get('APP_KEY')
 
 @app.route('/home')
 def home():
